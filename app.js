@@ -5,41 +5,79 @@ title.innerHTML = 'Hora del Desafío'
 
 
 
-function btn_userConsole(){
-    return console.log('¡Hola, mundo!');
-}
-
-function btn_userName(){
-    let name = prompt('Introduce un nombre por favor');
-    return console.log(`¡Hola, ${name}!`);
-}
-
-function btn_userDouble(){
-    let numDouble = parseFloat(prompt('Introduce un numero por favor'));
-     return console.log(`El doble del numero seleccionado es ${numDouble+numDouble}`);
-}
-function btn_userAverage(){
-    let numAverage = 0;
-    for (var i = 0; i < 3; i++) {
-        numAverage = numAverage + parseInt(prompt(`Introduce el valor #${i+1} por favor`));   
+function btn_Challenge01(){
+    try {
+        let height = parseFloat(prompt('Introduzca la altura en metros'));
+        let weight = parseFloat(prompt('Introduzca el peso en kilogramos'));
+        
+        return alert(`El IMC (Indice de masa corporal) para los valores ingresados es de: ${(weight/Math.pow(height, 2)).toFixed(2)} `);
+    } catch (error) {
+        console.log(error);
     }
-    return console.log(`El promedio de los valores seleccionados es ${numAverage/3}`);
 }
-function btn_userBigger(){
-    const numCount = 2;
-    let numbers = [];//Array []
-    for (var i = 0; i < numCount; i++) {
-        val = parseInt(prompt(`Introduce el valor #${i+1} por favor`));
-        numbers.push(val);
+
+function btn_Challenge02(){
+    try {
+        let num = parseFloat(prompt('Introduzca el valor que desee buscar el factorial'));
+        let fac = factorial(num);
+
+        return alert(`El factorial del valor ingresado es: ${fac}`);
+    } catch (error) {
+        console.log(error);      
     }
-    return console.log(`El mayor de los valores seleccionados es ${Math.max(...numbers)}`);
-    //Se utiliza el operador spreed "..."para separar todo el array 
-    //y sacarle el maximo de ellos con la funcion Math.max
 }
 
-let num1, num2;
-function btn_userElevated(){
+function btn_Challenge03(){
+    try {
+        let cash = parseFloat(prompt('Introduce el valor en $ dolares USD para transformarlo a reales brasilena, por favor'));
+        
+        return alert(`Al cambio el valor equivalente es ${cash * 4.80}`);
+    } catch (error) {
+        console.log(error);
+    }
+}
+function btn_Challenge04(){
+    try {
+        let height = parseFloat(prompt('Introduzca la altura en metros para determinar el área y el perímetro de una sala rectangular'));
+        let width  = parseFloat(prompt('Introduzca el ancho en metros para determinar el área y el perímetro de una sala rectangular'));
+        
+        return alert(`El área es de ${height*width}m, mientras que el perimetro es de ${2 *(height+width)}m del rectangulo respectivamente`);
 
-    let num1 = parseFloat(prompt('Introduce un numero por favor'));
-     return console.log(`El doble del numero seleccionado es ${num1*num1}`);
+    } catch (error) {
+        console.log(error);       
+    }
+}
+function btn_Challenge05(){
+    let radio = parseFloat(prompt('Introduzca el radio en metros para determinar el área y el perímetro de una sala circular'));
+    return alert(`El área es de ${(Math.PI * Math.pow(radio, 2)).toFixed(2)}m, mientras que el perimetro es de ${(2 *Math.PI*radio).toFixed(2)}m del circulo respectivamente`);
+}
+
+function btn_Challenge06(){
+
+    let num = parseInt(prompt('Introduce el numero de la tabla de multiplicar a buscar'));
+     return alert(`El doble del numero seleccionado es:
+     ${num} * 1 = ${num*1}
+     ${num} * 2 = ${num*2}
+     ${num} * 3 = ${num*3}
+     ${num} * 4 = ${num*4}
+     ${num} * 5 = ${num*5}
+     ${num} * 6 = ${num*6}
+     ${num} * 7 = ${num*7}
+     ${num} * 8 = ${num*8}
+     ${num} * 9 = ${num*9}
+     ${num} * 10 = ${num*10}
+     ${num} * 11 = ${num*11}
+     ${num} * 12 = ${num*12}`);
+}
+
+
+
+function factorial(num) {
+    let fac = num;
+    num--;
+    while (num > 0) {
+        fac = fac * num;
+        num--;
+    }
+    return fac;
 }

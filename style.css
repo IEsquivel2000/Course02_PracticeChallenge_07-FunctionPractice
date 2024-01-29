@@ -2,11 +2,12 @@ header {
   text-align: center;
   font-size: 30px;
   color: #279EFF;
+  padding: 5%;
 }
 
 main, html {
-  margin: 0;
-  padding: 0;
+  margin: 10px;
+  padding: 5% 24px;
   height: 50%;
   display: flex;
   justify-content: center;
@@ -16,19 +17,30 @@ main, html {
 
 .container {
   text-align: center;
-  color: #279EFF;
+  display: block; 
+  padding: 10px 24px;
+  justify-content: center; 
+  align-items: center;
 }
 
 .button {
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 24px;
-  border: none;
+  padding: 5%;
+  margin: 1%;
+  font-size: 150%;
+  border: 1px solid #ffffff;
   background-color: #3498db;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .button:hover {
-  background-color: #2980b9;
+  background-color: #2977ac;
 }
+
+/* Haciendo la pagina responsive  */
+
+/* @media screen and (max-with:1200px){
+  .button {
+    display: block;
+  } 
+}*/
